@@ -24,7 +24,9 @@ use {
             'kyazdani42/nvim-web-devicons'
         },
 }
+  -- tabs
 
+use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
   -- file manager
     use {
         'kyazdani42/nvim-tree.lua',
