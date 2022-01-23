@@ -1,11 +1,11 @@
-# No greeting when starting an interactive shell.
-function fish_greeting
-end
+eval (starship init fish)
 
-starship init fish | source
+set -Ux CHROME_PATH /usr/bin/google-chrome
 
-# Set NVM version
-set --universal nvm_default_version latest
+# Aliases
+alias npm=pnpm
+alias sudo=doas
+alias gpg=gpg2
 
 # Start SSH agent and add all keys.
 fish_ssh_agent
@@ -21,3 +21,15 @@ fish_add_path $DENO_INSTALL/bin
 function neovide
     neovide.exe --wsl
 end
+
+# set gpg tty
+set GPG_TTY (tty)
+
+# tabtab source for packages
+# uninstall by removing these lines
+[ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
+
+# Bun
+set -Ux BUN_INSTALL "/home/pranav/.bun"
+set -px --path PATH "/home/pranav/.bun/bin"
+
